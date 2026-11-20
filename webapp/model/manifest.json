@@ -1,0 +1,38 @@
+{
+ "model": "kazalbrur/bangla-asr-conformer-120m-dialects (int8 ONNX)",
+ "parts": [
+  {
+   "name": "model.int8.onnx.part00",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part01",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part02",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part03",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part04",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part05",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part06",
+   "size": 19922944
+  },
+  {
+   "name": "model.int8.onnx.part07",
+   "size": 4464514
+  }
+ ],
+ "total": 144653970
+}

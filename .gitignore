@@ -1,0 +1,5 @@
+# too large for GitHub (>100 MB) — regenerate with export_onnx.py / build_apk.sh
+sherpa-model/
+*.apk
+webtest/node_modules/
+__pycache__/

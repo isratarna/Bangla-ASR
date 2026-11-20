@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bangla ASR</title>
+<meta name="description" content="Offline Bangla speech-to-text in your browser">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <img src="icon.svg" alt="" width="32" height="32">
+    <div>
+      <h1>Bangla ASR</h1>
+      <p class="sub">বাংলা কথা থেকে লেখা · runs on this device</p>
+    </div>
+  </div>
+  <span id="offlineBadge" class="badge" hidden>Works offline</span>
+</header>
+
+<main>
+  <section id="loading" class="card loading">
+    <p id="loadText">Preparing…</p>
+    <div class="bar"><div id="loadBar"></div></div>
+    <p id="loadDetail" class="muted small"></p>
+  </section>
+
+  <section class="card controls">
+    <button id="micBtn" class="mic" disabled aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
+      <span id="micLabel">Start listening</span>
+    </button>
+    <div class="meter" aria-hidden="true"><div id="level"></div></div>
+    <p id="micStatus" class="muted small">Speak, then pause — text appears after each pause.</p>
+
+    <div class="row">
+      <label class="file">
+        <input id="fileInput" type="file" accept="audio/*,video/*" disabled>
+        <span>Transcribe an audio file</span>
+      </label>
+      <span id="fileStatus" class="muted small"></span>
+    </div>
+
+    <details class="settings">
+      <summary>Settings</summary>
+      <label>Pause that ends a sentence <output id="silenceOut">600 ms</output>
+        <input id="silence" type="range" min="300" max="1500" step="100" value="600">
+      </label>
+      <label class="check"><input id="ns" type="checkbox"> Browser noise suppression</label>
+      <p id="engineInfo" class="muted small"></p>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="list-head">
+      <h2>Transcript</h2>
+      <div class="actions">
+        <button id="copyAll" class="ghost">Copy all</button>
+        <button id="download" class="ghost">Download .txt</button>
+        <button id="clear" class="ghost">Clear</button>
+      </div>
+    </div>
+    <ol id="results" class="results"></ol>
+    <p id="empty" class="muted empty">Nothing yet.</p>
+  </section>
+</main>
+
+<footer class="muted small">
+  Model: kazalbrur/bangla-asr-conformer-120m-dialects (Apache-2.0) · onnxruntime-web · Silero VAD.
+  Audio never leaves this device.
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
